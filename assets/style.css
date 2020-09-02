@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+}
+input,select {
+    display: block;
+    padding: 10px 25px;
+    margin: 10px auto;
+    width: 400px;
+}
+h1, p {
+    text-align: center;
+}
