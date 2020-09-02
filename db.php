@@ -11,7 +11,6 @@ try {
     $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $dbc->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-
     // START
         // LOGIN
         if(!empty($_POST) && !isset($_POST['first_name'])){
@@ -31,6 +30,7 @@ try {
 
                         echo "Successfully logged in!";
                         $_SESSION['user_logged'] = 'successful';
+                        $_SESSION['user_id'] = $result['id'];
                         $_SESSION['user_email'] = $result['email'];
                         $_SESSION['user_name'] = $result['first_name'].' '.$result['last_name'];
 
@@ -68,6 +68,15 @@ try {
             
             $last_id = $dbc->lastInsertId(); // Works only when inserting
             header('Location:login.php');
+
+            /*
+            // UPDATE
+                $upd_sql = $dbc->prepare("UPDATE user_info SET password = ? WHERE id = ?");
+                $upd_sql->execute(['1515121', 2]);
+            // DELETE
+                $upd_sql = $dbc->prepare("DELETE user_info WHERE id = ?");
+                $upd_sql->execute([2]);
+            */
 
         }
     // END

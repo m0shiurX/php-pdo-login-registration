@@ -9,8 +9,9 @@
 
         <h1>Welcome <?php echo $name; ?>!</h1>
         <p><?php echo $email; ?></p>
-
         <p><a href="logout.php">Logout</a></p>
+
+        
 
     <?php
     } else {
