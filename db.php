@@ -45,8 +45,6 @@ try {
                 }
 
             }
-
-
         }
         // REGISTRATION
         if(!empty($_POST) && isset($_POST['first_name'])){
